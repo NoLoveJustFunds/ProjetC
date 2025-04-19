@@ -94,5 +94,5 @@ Place le fichier main.c dans un dossier de votre choix sur votre ordinateur.
 
 5. Lancer le programme
 
-    Une fois l’exécutable généré, vous ppouvezeux lancer le jeu en exécutant la commande suivante dans le terminal :
+    Une fois l’exécutable généré, vous pouvez lancer le jeu en exécutant la commande suivante dans le terminal :
     `./prog`# ProjetC
