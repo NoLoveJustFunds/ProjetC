@@ -64,6 +64,7 @@ int FonctionAddition() {
         // Demande au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
         if (nbEssais == 3 && reponseUser != resultat) {
             printf("Nombre total de points : %d\n", pointUser);
+            printf("\n");
             break; // Sort de la boucle do...while si le joueur a perdu
         }
 
@@ -141,6 +142,7 @@ int FonctionMultiplication() {
         // Demande au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
         if (nbEssais == 3 && ReponseUser != resultat) {
             printf("Nombre total de points : %d\n", pointUser);
+            printf("\n");
             break; // Sort de la boucle do...while si le joueur a perdu
         }
 
@@ -226,11 +228,12 @@ int FonctionSoustraction() {
         // Demande au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
         if (nbEssais == 3 && ReponseUser != resultat) {
             printf("Nombre total de points : %d\n", pointUser);
+            printf("\n");
             break; // Sort de la boucle do...while si le joueur a perdu
         }
 
         do {
-            printf("Voulez-vous continuer ? (o/n) : ");
+            printf("Souhaitez-vous continuer ? (o/n) : ");
             scanf(" %c", &continuer);
             printf("\n");
         } while (continuer != 'o' && continuer != 'O' && continuer != 'n' && continuer != 'N');
@@ -312,11 +315,12 @@ int FonctionTableMultiplication(){
             // Demande au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
             if (nbEssais == 3 && ReponseUser != resultat) {
                 printf("Nombre total de points : %d\n", pointUser);
+                printf("\n");
                 break; // Sort de la boucle do...while si le joueur a perdu
             }
     
             do {
-                printf("Voulez-vous continuer ? (o/n) : ");
+                printf("Souhaitez-vous continuer ? (o/n) : ");
                 scanf(" %c", &continuer);
                 printf("\n");
             } while (continuer != 'o' && continuer != 'O' && continuer != 'n' && continuer != 'N');
@@ -328,7 +332,7 @@ int FonctionTableMultiplication(){
        return pointUser; 
     }
 
-//---------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------//ok
 
 int FonctionDivision(){
 
@@ -338,15 +342,23 @@ int FonctionDivision(){
 
     srand(time(NULL));
     
+    printf("Bienvenue dans le jeu de division euclidienne !\n");
+    printf("Vous avez 3 essais pour trouver le résultat d'une division.\n");
+    printf("\n");
 
-    printf("Si vous trouvez en 1 seul coup, vous aurez 10 points\n");
-    printf("Si vous trouvez en 2 coups, vous aurez 5 points\n");
-    printf("Si vous trouvez en 3 coups, vous aurez 1 point\n");
+    printf("Si vous trouvez en 1 seul coup, vous aurez 10 points.\n");
+    printf("Si vous trouvez en 2 coups, vous aurez 5 points.\n");
+    printf("Si vous trouvez en 3 coups, vous aurez 1 point.\n");
+    printf("\n");
 
-    printf("\n---------------------------\n");
-    printf("Ce jeu de division est différent des autres.\n");
-    printf("Vous devez trouver le moduloe ( le reste ) de la divion de 2 nombres\n");
-    printf("Par exemple , 14 modulo 3 = 2 car 4 x 3 = 12 et le reste est 2\n");
+    printf("Ce mini jeu de division est différent des autres.\n");
+    printf("Vous devez trouver le modulo ( le reste ) de la divion de 2 nombres.\n");
+    printf("Par exemple , 14 modulo 3 = 2 car 4 x 3 = 12 et le reste est 2.\n");
+    printf("\n");
+
+
+    printf("Bonne chance !\n");
+    printf("\n");
 
 
     do {
@@ -368,6 +380,7 @@ int FonctionDivision(){
         while (nbEssais < 3) {
             printf("Entrez le résultat : ");
             scanf("%d", &ReponseUser);
+            printf("\n");
             nbEssais++;
 
             if (ReponseUser == resultat) {
@@ -388,6 +401,7 @@ int FonctionDivision(){
                 } else {
                     printf("Dommage, la bonne réponse était : %d\n", resultat);
                     printf("Vous avez échoué 3 fois.\n");
+                    printf("\n");
                 }
             }
         }
@@ -395,12 +409,14 @@ int FonctionDivision(){
         // Demande au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
         if (nbEssais == 3 && ReponseUser != resultat) {
             printf("Nombre total de points : %d\n", pointUser);
+            printf("\n");
             break; // Sorti de la boucle do...while si le joueur a perdu
         }
 
         do {
-            printf("Voulez-vous continuer ? (o/n) : ");
+            printf("Souhaitez-vous continuer ? (o/n) : ");
             scanf(" %c", &continuer);
+            printf("\n");
         } while (continuer != 'o' && continuer != 'O' && continuer != 'n' && continuer != 'N');
 
     } while (continuer == 'o' || continuer == 'O');
@@ -411,11 +427,20 @@ int FonctionDivision(){
 
 }
 
-//---------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------//ok
 
 int MiniProbleme(){
 
-    int resultat, ReponseUser,nbEssais,pointUser = 0;
+    printf("Bienvenue dans le jeu des mini problèmes !\n");
+    printf("Vous avez 1 SEUL essai pour trouver la réponse d'un mini problème.\n");
+    printf("Si vous trouver la réponse , un message vous indiquera le nombre de points gagnés.\n");
+    printf("Si vous ne parvenez pas à trouver la réponse , la logique du problème s'affichera\n");
+    printf("\n");
+
+    printf("Bonne chance !\n");
+    printf("\n");
+
+    int resultat, ReponseUser,pointUser = 0;
     char continuer;
 
     srand(time(NULL));
@@ -425,8 +450,11 @@ int MiniProbleme(){
     if(nombreAlea == 1){
         printf("Wilfried avait 19 sacs de 40 bonbons . Il achète 18 bonbons .\n");
         resultat = 19*40 +18;
-        printf("Combien a t'il de bonbons maintenant\n");
+        printf("\n");
+        printf("Combien a t'il de bonbons maintenant ?\n");
+        printf("Entrez votre réponse : ");
         scanf("%d", &ReponseUser);
+        printf("\n");
 
         if(ReponseUser == resultat){
             printf("Excellent !  , vous avez gagné 15 points.\n");
@@ -450,8 +478,11 @@ int MiniProbleme(){
 
         resultat = (17 * 30) - (8 * 4) + (2 * 25);
 
+        printf("\n");
         printf("Combien a-t-il de timbres maintenant ?\n");
+        printf("Entrez votre réponse : ");
         scanf("%d", &ReponseUser);
+        printf("\n");
 
         if (ReponseUser == resultat) {
             printf("Excellent ! Vous avez gagné 15 points.\n");
@@ -474,8 +505,11 @@ int MiniProbleme(){
 
         resultat = (19 * 18) - (3 * 5) + 12;
 
+        printf("\n");
         printf("Combien a-t-il de petites voitures maintenant ?\n");
+        printf("Entrez votre réponse : ");
         scanf("%d", &ReponseUser);
+        printf("\n");
 
         if (ReponseUser == resultat) {
             printf("Excellent ! Vous avez gagné 15 points.\n");
@@ -495,8 +529,11 @@ int MiniProbleme(){
 
         printf("Bob avait 4 boîtes de 6 balles rouge . Il vend 1 boite mais il recoit 3 boites de 3 balles rouge .\n");
         resultat = ((4*6)-6) + 3*3;
+        printf("\n");
         printf("Combien a-t-il de balles rouges maintenant ?\n");
+        printf("Entrez votre réponse : ");
         scanf("%d", &ReponseUser);
+        printf("\n");
 
         if(ReponseUser == resultat){
             printf("Excellent !  , vous avez gagné 15 points.\n");
@@ -520,8 +557,11 @@ int MiniProbleme(){
         printf("Mais il donne ensuite 2 cartes à chacun de ses 4 amis.\n");
         printf("Il recoit ensuite un cadeau de 10 cartes.\n");
         resultat = (6 * 15) - (2 * 4) + 10 ;
+        printf("\n");
         printf("Combien a-t-il de cartes maintenant ?\n");
+        printf("Entrez votre réponse : ");
         scanf("%d", &ReponseUser);
+        printf("\n");
 
 
         if(ReponseUser == resultat){
@@ -529,7 +569,6 @@ int MiniProbleme(){
             pointUser+=15;
         }else{
             printf("Voici la réflexion qu'il fallait avoir : \n");
-
             printf("\n");
             printf("Lucas avait 6 paquets contenant chacun 15 cartes.\n");
             printf("Il faut donc commencer par faire une multiplication.\n");
@@ -543,7 +582,7 @@ int MiniProbleme(){
         }
     
     }     
-
+    printf("\n");
 printf("Fin du jeu | Total des points gagnés : %d\n", pointUser);
 return pointUser;
 }
