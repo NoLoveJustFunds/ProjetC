@@ -1,3 +1,5 @@
+//Commande pour compiler ce programme : gcc mainGTK.c -o programme `pkg-config --cflags --libs gtk+-3.0`
+
 #include <gtk/gtk.h>
 #include <stdio.h>
 #include <stdlib.h>
