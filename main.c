@@ -1,10 +1,11 @@
+//Importation des bibliothèques nécessaires
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
 #include <stdbool.h>
 
-//---------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------//ok
 
 int FonctionAddition() {
     int pointUser = 0;
@@ -13,12 +14,19 @@ int FonctionAddition() {
 
     srand(time(NULL));
 
-    printf("Si vous trouvez en 1 seul coup, vous aurez 10 points\n");
-    printf("Si vous trouvez en 2 coups, vous aurez 5 points\n");
-    printf("Si vous trouvez en 3 coups, vous aurez 1 point\n");
+    printf("Bienvenue dans le jeu d'addition !\n");
+    printf("Vous avez 3 essais pour trouver le résultat d'une addition.\n");
+    printf("\n");
+
+    printf("Si vous trouvez en 1 seul coup, vous aurez 10 points.\n");
+    printf("Si vous trouvez en 2 coups, vous aurez 5 points.\n");
+    printf("Si vous trouvez en 3 coups, vous aurez 1 point.\n");
+    printf("\n");
+
+    printf("Bonne chance !\n");
 
     do {
-        int nombre1 = rand() % 100 + 1;
+        int nombre1 = rand() % 100 + 1; //Génère un nombre aléatoire entre 1 et 100
         int nombre2 = rand() % 100 + 1;
         resultat = nombre1 + nombre2;
         nbEssais = 0;
@@ -28,6 +36,7 @@ int FonctionAddition() {
         while (nbEssais < 3) {
             printf("Entrez le résultat : ");
             scanf("%d", &reponseUser);
+            printf("\n");
             nbEssais++;
 
             if (reponseUser == resultat) {
@@ -52,25 +61,26 @@ int FonctionAddition() {
             }
         }
 
-        // Demander au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
+        // Demande au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
         if (nbEssais == 3 && reponseUser != resultat) {
             printf("Nombre total de points : %d\n", pointUser);
-            break; // Sortir de la boucle do...while si le joueur a perdu
+            break; // Sort de la boucle do...while si le joueur a perdu
         }
 
         do {
-            printf("Voulez-vous continuer ? (o/n) : ");
+            printf("Souhaitez-vous continuer ? (o/n) : ");
             scanf(" %c", &continuer);
         } while (continuer != 'o' && continuer != 'O' && continuer != 'n' && continuer != 'N');
 
     } while (continuer == 'o' || continuer == 'O');
 
-    printf("Fin du jeu. Score final : %d\n", pointUser);
+    printf("\n");
+    printf("Fin du jeu. Total des points gagnés : %d\n", pointUser);
     return pointUser;
         
 }
 
-//---------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------//ok
 
 int FonctionMultiplication() {
     int resultat, ReponseUser,nbEssais, pointUser = 0;
@@ -78,15 +88,22 @@ int FonctionMultiplication() {
 
     srand(time(NULL));
 
+    printf("Bienvenue dans le jeu de multiplication !\n");
+    printf("Vous avez 3 essais pour trouver le résultat d'une multiplication.\n");
+    printf("\n");
+
     printf("Si vous trouvez en 1 seul coup, vous aurez 10 points\n");
     printf("Si vous trouvez en 2 coups, vous aurez 5 points\n");
     printf("Si vous trouvez en 3 coups, vous aurez 1 point\n");
+    printf("\n");
 
-   
+    printf("Bonne chance !\n");
+    printf("\n");
+
 
     do {
-        int nombre1 = rand() % 10 + 1;
-        int nombre2 = rand() % 10 + 1;
+        int nombre1 = rand() % 15 + 1; //Génère un nombre aléatoire entre 1 et 15
+        int nombre2 = rand() % 15 + 1;
        
         resultat = nombre1 * nombre2; 
         nbEssais = 0;
@@ -96,6 +113,7 @@ int FonctionMultiplication() {
         while (nbEssais < 3) {
             printf("Entrez le résultat : ");
             scanf("%d", &ReponseUser);
+            printf("\n");
             nbEssais++;
 
             if (ReponseUser == resultat) {
@@ -120,15 +138,16 @@ int FonctionMultiplication() {
             }
         }
 
-        // Demander au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
+        // Demande au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
         if (nbEssais == 3 && ReponseUser != resultat) {
             printf("Nombre total de points : %d\n", pointUser);
-            break; // Sortir de la boucle do...while si le joueur a perdu
+            break; // Sort de la boucle do...while si le joueur a perdu
         }
 
         do {
-            printf("Voulez-vous continuer ? (o/n) : ");
+            printf("Souhaitez-vous continuer ? (o/n) : ");
             scanf(" %c", &continuer);
+            printf("\n");
         } while (continuer != 'o' && continuer != 'O' && continuer != 'n' && continuer != 'N');
 
     } while (continuer == 'o' || continuer == 'O');
@@ -137,7 +156,7 @@ int FonctionMultiplication() {
     return pointUser;
 }
 
-//---------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------//ok
 
 int FonctionSoustraction() {
     int resultat, ReponseUser,nbEssais,pointUser = 0;
@@ -145,18 +164,26 @@ int FonctionSoustraction() {
 
 
     srand(time(NULL));
+
+    printf("Bienvenue dans le jeu de soustraction !\n");
+    printf("Vous avez 3 essais pour trouver le résultat d'une soustraction.\n");
+    printf("\n");
     
 
     printf("Si vous trouvez en 1 seul coup, vous aurez 10 points\n");
     printf("Si vous trouvez en 2 coups, vous aurez 5 points\n");
     printf("Si vous trouvez en 3 coups, vous aurez 1 point\n");
+    printf("\n");
+
+    printf("Bonne chance !\n");
+    printf("\n");
 
 
     do {
-        int nombre1 = rand() % 101;
+        int nombre1 = rand() % 101;//Génère un nombre aléatoire entre 0 et 100
         int nombre2 = rand() % 101;
 
-        int permutation;
+        int permutation; //Permuation des éléments si le nombre 1 est plus petit que le nombre 2 (soustraction simple pour les CM1)
         if (nombre1 < nombre2) {
             permutation = nombre2;
             nombre2 = nombre1;
@@ -171,6 +198,7 @@ int FonctionSoustraction() {
         while (nbEssais < 3) {
             printf("Entrez le résultat : ");
             scanf("%d", &ReponseUser);
+            printf("\n");
             nbEssais++;
 
             if (ReponseUser == resultat) {
@@ -195,15 +223,16 @@ int FonctionSoustraction() {
             }
         }
 
-        // Demander au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
+        // Demande au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
         if (nbEssais == 3 && ReponseUser != resultat) {
             printf("Nombre total de points : %d\n", pointUser);
-            break; // Sortir de la boucle do...while si le joueur a perdu
+            break; // Sort de la boucle do...while si le joueur a perdu
         }
 
         do {
             printf("Voulez-vous continuer ? (o/n) : ");
             scanf(" %c", &continuer);
+            printf("\n");
         } while (continuer != 'o' && continuer != 'O' && continuer != 'n' && continuer != 'N');
 
     } while (continuer == 'o' || continuer == 'O');
@@ -213,38 +242,53 @@ int FonctionSoustraction() {
     return pointUser;
 }
 
-//---------------------------------------------------------------------------------//
+//---------------------------------------------------------------------------------//ok
 
 int FonctionTableMultiplication(){
 
+    printf("Bienvenue dans le jeu des tables de multiplications !\n");
+    printf("Vous devez choisir une table de multiplication sur laquelle vous souhaitez vous entrainer.\n");
+    printf("Vous avez 3 essais pour trouver le résultat d'une multiplication.\n");
+    printf("\n");
+
+    printf("Si vous trouvez en 1 seul coup, vous aurez 10 points.\n");
+    printf("Si vous trouvez en 2 coups, vous aurez 5 points.\n");
+    printf("Si vous trouvez en 3 coups, vous aurez 1 point.\n");
+    printf("\n");
+
+    printf("Bonne chance !\n");
+    printf("\n");
 
     int resultat, ReponseUser,choixUser,nbEssais,pointUser = 0;
     char continuer;
     
         do {
-            printf("Entrer la table (1 à 10) sur laquelle que vous voulez travailler :\n");
+            printf("Entrer la table (1 à 10) sur laquelle que vous voulez travailler :");
             scanf("%d",&choixUser);
+            printf("\n");
 
             for(int i =1; i <=10 ; i++){
                 printf("%d * %d\n",i,choixUser);
             }
 
-            
-            for(int i = 1 ; i<=10 ;i++){
+            printf("\n");
+            for(int i = 1 ; i<=10 ;i++){ //Boucle qui parcourt tous les nombres dans la table de multiplication choisie
+                printf("\n");
                 printf("%d * %d =?\n", i , choixUser);
                 resultat = i * choixUser; 
                 nbEssais = 0;
                 while (nbEssais < 3) {
                     printf("Entrez le résultat : ");
                     scanf("%d", &ReponseUser);
+                    printf("\n");
                     nbEssais++;
         
                     if (ReponseUser == resultat) {
                         if (nbEssais == 1) {
-                            printf("Bravo ! Vous avez eu 10 points !\n");
+                            printf("Bravo ! Vous avez obtenu 10 points !\n");
                             pointUser += 10;
                         } else if (nbEssais == 2) {
-                            printf("Bien joué ! Vous obtenez 5 points\n");
+                            printf("Bien joué ! Vous avez obtenu 5 points\n");
                             pointUser += 5;
                         } else {
                             printf("Vous obtenez quand même 1 point\n");
@@ -265,15 +309,16 @@ int FonctionTableMultiplication(){
             }
             
     
-            // Demander au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
+            // Demande au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
             if (nbEssais == 3 && ReponseUser != resultat) {
                 printf("Nombre total de points : %d\n", pointUser);
-                break; // Sortir de la boucle do...while si le joueur a perdu
+                break; // Sort de la boucle do...while si le joueur a perdu
             }
     
             do {
                 printf("Voulez-vous continuer ? (o/n) : ");
                 scanf(" %c", &continuer);
+                printf("\n");
             } while (continuer != 'o' && continuer != 'O' && continuer != 'n' && continuer != 'N');
     
         } while (continuer == 'o' || continuer == 'O');
@@ -305,10 +350,10 @@ int FonctionDivision(){
 
 
     do {
-        int nombre1 = rand() % 101;
+        int nombre1 = rand() % 101; // Nombre aléatoire entre 0 et 100
         int nombre2 = rand() % 101;
 
-        int permutation;
+        int permutation;//Permutation des éléements si le nombre 1 est plus petit que le nombre 2 (division simple pour les CM1)
         if (nombre1 < nombre2) {
             permutation = nombre2;
             nombre2 = nombre1;
@@ -347,10 +392,10 @@ int FonctionDivision(){
             }
         }
 
-        // Demander au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
+        // Demande au joueur s'il veut continuer seulement si le jeu n'est pas déjà terminé
         if (nbEssais == 3 && ReponseUser != resultat) {
             printf("Nombre total de points : %d\n", pointUser);
-            break; // Sortir de la boucle do...while si le joueur a perdu
+            break; // Sorti de la boucle do...while si le joueur a perdu
         }
 
         do {
@@ -601,8 +646,8 @@ int QuizGenerale() {
 //---------------------------------------------------------------------------------//
 
 char* date_actu() {
-    static char s_now[20]; // "JJ/MM/AAAA-HH:MM:SS" = 19 caractères + '\0'
-    time_t now = time(NULL); //Retourne l'heure actuelle
+    static char s_now[20]; // "JJ/MM/AAAA-HH:MM:SS" -> 19 caractères + '\0' ( le caractère fermant)
+    time_t now = time(NULL); //Retourne l'heure actuelle avec la fonction time
     struct tm* tm_now = localtime(&now); //localtime(&now) convertit la valeur du temps now en seconde en une structure tm
 
     if (tm_now == NULL) {
@@ -610,13 +655,13 @@ char* date_actu() {
     }
 
     strftime(s_now, sizeof(s_now), "%d/%m/%Y-%H:%M:%S", tm_now); //On formate avec strftime dans le tableau s_now
-    return s_now; //Sans static , le pointeur sur s_now sera invalide car varaible détruite a la fin de la fonctions
+    return s_now; //Sans static , le pointeur sur s_now sera invalide car varaible détruite a la fin de la fonctions ( un de mes problèmes rencontré)
     }
      
 //---------------------------------------------------------------------------------//
 
 void CreationJoueur(char* NomUser, char* PnomUser, char* date, int Nbpoint) {
-    FILE* F = fopen("FichierPoints.txt", "a"); // Ouvre en mode ajout
+    FILE* F = fopen("FichierPoints.txt", "a"); // Ouvre en mode ajout 
     if (F == NULL) {
         printf("Erreur lors de l'ouverture du fichier\n");
         return;
@@ -624,7 +669,7 @@ void CreationJoueur(char* NomUser, char* PnomUser, char* date, int Nbpoint) {
     
     printf("Votre profil va etre ajouté ... \n");
     
-    // Utilisation du délimiteur | entre les champs et ajout d'un retour à la ligne
+    // Utilisation du délimiteur | entre les champs et ajout d'un retour à la ligne pour le joueur prochain
     fprintf(F, "%s|%s|%s|%d\n", NomUser, PnomUser, date, Nbpoint);
     
     printf("Votre profil a été crée ! \n");
@@ -662,8 +707,7 @@ bool VerificationJoueurExiste(char* NomUser, char* PnomUser) {
             prenom = strtok(NULL, "|"); //Extraction du second champs ( prenom)
             
             if (prenom != NULL) {
-                if (strcmp(name, NomUser) == 0 && strcmp(prenom, PnomUser) == 0) {
-                    printf("Votre profil est deja enregistré dans le jeu ! \n");
+                if (strcmp(name, NomUser) == 0 && strcmp(prenom, PnomUser) == 0) { //Conparaison avec ceux de l'utilisateur choisis
                     joueurExiste = true;
                     free(copie); //Libere la memoire
                     break;
@@ -691,12 +735,12 @@ bool chercherJoueur(char* NomUser, char* PnomUser, int *PointsUser) {
     bool joueurTrouve = false;
     
     while (fgets(ligne, sizeof(ligne), F)) {
-        // Supprimer le retour à la ligne s'il existe
+        // Supprime le retour à la ligne s'il existe entre 2 joueurs
         ligne[strcspn(ligne, "\n")] = 0;
         
         char *name, *prenom, *date, *points, *copie;
         
-        // Faire une copie car strtok modifie la chaîne originale
+        // Fait une copie car strtok modifie la chaîne originale
         copie = strdup(ligne);
         if (copie == NULL) {
             printf("Erreur d'allocation mémoire\n");
@@ -713,11 +757,11 @@ bool chercherJoueur(char* NomUser, char* PnomUser, int *PointsUser) {
                 if (date != NULL) {
                     points = strtok(NULL, "|");
                     if (points != NULL) {
-                        // Vérifier si c'est le joueur recherché
+                        // On verifie si le nom et prenom du joueur correspond à celui cherché
                         if (strcmp(name, NomUser) == 0 && strcmp(prenom, PnomUser) == 0) {
-                            *PointsUser = atoi(points);  // Convertir points en entier
+                            *PointsUser = atoi(points);  //On convertit le nombre de points en entier car dans le fichier tout est en string 
                             joueurTrouve = true;
-                            free(copie);
+                            free(copie); //Liberation de la memoire
                             break;
                         }
                     }
@@ -747,7 +791,7 @@ void AfficherPointsJoueur(char *NomUser, char *PnomUser) {
 
 void MiseAjourPoints(char *NomUser, char *PnomUser, int PointsUser) {
     FILE *F = fopen("FichierPoints.txt", "r");
-    FILE *F2 = fopen("FichierTemp.txt", "w");
+    FILE *F2 = fopen("FichierTemp.txt", "w"); //Création d'un fichier temporaire pour sauvegarder les nouveaux points
     if (F == NULL || F2 == NULL) {
         printf("Erreur lors de l'ouverture des fichiers\n");
         return;
@@ -758,37 +802,37 @@ void MiseAjourPoints(char *NomUser, char *PnomUser, int PointsUser) {
     
     while (fgets(ligne, sizeof(ligne), F)) {
         
-        ligne[strcspn(ligne, "\n")] = 0;  // Supprimer le retour à la ligne s'il existe ( \n )
+        ligne[strcspn(ligne, "\n")] = 0;  // Supprime le retour à la ligne s'il existe ( \n ) entre 2 joueurs si il existe
         
-        char *name, *prenom, *date, *points_str; //Creation de pointeur sur les elements du fichier
+        char *name, *prenom, *date, *points_str; //Creation de pointeur sur les elements du fichier pour facilier la récupération
         int NbPoints;
         
         
-        char *copie = strdup(ligne);// Faire une copie de la ligne pour strtok car modifie la chaine
+        char *copie = strdup(ligne);// J'ai réaliser une copie de la ligne car strtok modifie la chaîne originale 
         if (copie == NULL) {
             fclose(F);
             fclose(F2);
             return;
         }
         
-        // Extraire les champs
+        //On Extrait les champs
         name = strtok(copie, "|");
         prenom = strtok(NULL, "|");
         date = strtok(NULL, "|");
         points_str = strtok(NULL, "|");
         
         if (name && prenom && date && points_str) {
-            NbPoints = atoi(points_str); //On convertir la chaine en nombre de points
+            NbPoints = atoi(points_str); //On convertit le nombre de points en entier car dans le fichier tout est en string 
             
             if (strcmp(name, NomUser) == 0 && strcmp(prenom, PnomUser) == 0) {
                 NbPoints += PointsUser;
                 char date_nouvelle[30];
                 strcpy(date_nouvelle, date_actu());
                 
-                // Écrire dans le fichier temporaire avec les nouvelles informations
+                // On ecrit  dans le fichier temporaire les nouvelles informations
                 fprintf(F2, "%s|%s|%s|%d\n", name, prenom, date_nouvelle, NbPoints);
             } else {
-                // Écrire la ligne originale dans le fichier temporaire
+                // On ecrit la ligne originale dans le fichier temporaire si le joueur n'est pas celui qu'on cherche
                 fprintf(F2, "%s|%s|%s|%d\n", name, prenom, date, NbPoints);
             }
         }
@@ -796,12 +840,12 @@ void MiseAjourPoints(char *NomUser, char *PnomUser, int PointsUser) {
         free(copie);
     }
     
-    fclose(F);
+    fclose(F); 
     fclose(F2);
     
-    // Remplacer l'ancien fichier par le fichier temporaire
-    remove("FichierPoints.txt"); // Supprimer l'ancien fichier
-    rename("FichierTemp.txt", "FichierPoints.txt"); // Renommer le fichier temporaire
+    // Remplace l'ancien fichier par le fichier temporaire
+    remove("FichierPoints.txt"); // Supprime l'ancien fichier
+    rename("FichierTemp.txt", "FichierPoints.txt"); // Renomme le fichier temporaire et remplace l'ancien
     
     printf("Les points ont été mis à jour avec succès !\n");
 }
@@ -811,43 +855,47 @@ void MiseAjourPoints(char *NomUser, char *PnomUser, int PointsUser) {
 
 int main(int argc, char *argv[]) {
     
-    srand(time(NULL)); // Initialisation unique du générateur de nombres aléatoires
+    srand(time(NULL)); // Initialisation  du générateur de nombres aléatoires
 
     char NameUser[20];
     char RecupPoint;
     char SurnameUser[20];
     char reponse[5];
-    int choix = -1; // Initialisation de choix
+    int choix = -1; // Initialisation du choxi de départ pour pouvoir rentrer dans la boucle
 
-    printf("Bing ! Bienvenue dans le jeu de calcul mental !\n");
+    printf("Boom ! Bienvenue dans le jeu de calcul mental !\n");
 
-    printf("Entrez votre nom : ");
+    printf("Saisissez votre nom : ");
     scanf("%s", NameUser);
-    printf("Entrez votre prénom : ");
+    printf("Saisissez votre prénom : ");
     scanf("%s",SurnameUser);
 
-    printf("Etes vous inscrit ? (Oui/Non) : ");
+    printf("Etes vous déjà inscrit ? (Oui/Non) : ");
     scanf("%s",reponse);
-    if(strcmp(reponse , "Oui")==0){
+    if((strcmp(reponse , "Oui")==0) || strcmp(reponse , "oui")==0){
         if(VerificationJoueurExiste(NameUser , SurnameUser) == false){
             CreationJoueur(NameUser,SurnameUser,date_actu(),0);
+            printf("Utilisateur introuvable , un profil vient d'etre crée ! \n");
         }else{
-            printf("Heureux de vous revoir ! \n");
+            printf("Votre profil a été récupéré avec succès ! \n");
         }
         
     }else{
         if(VerificationJoueurExiste(NameUser , SurnameUser) == false){
+            printf("Votre profil a été créé avec succès ! \n");
             CreationJoueur(NameUser,SurnameUser,date_actu(),0);
+        }else{
+            printf("Votre profil existe déjà, il a été récupéré avec succès ! \n");
         }
     }
 
     printf("Souhaitez vous récuperer vos points (O/N) ? :");
     scanf(" %c", &RecupPoint); 
 
-    if (RecupPoint == 'O') {
+    if ((RecupPoint == 'O') || ( RecupPoint == 'o')) {
         AfficherPointsJoueur(NameUser,SurnameUser);
     }
-        // Boucle du menu tant que l'utilisateur ne choisit pas 0
+        // Boucle du menu tant que l'utilisateur ne choisit pas 0 ( ne veut pas quitter)
         while (choix != 0) {
             printf("+-------------------------------+\n");
             printf("| 1: Addition                   |\n");
@@ -861,40 +909,49 @@ int main(int argc, char *argv[]) {
             printf("| 0: Quitter                    |\n");
             printf("+-------------------------------+\n");
 
-            printf("Quel est votre choix ? \n");
+            printf("Saisissez votre choix :");
             scanf("%d", &choix);
+            printf("\n");
 
-            // Exécuter l'action correspondante
+            // Exécute l'action correspondante selon le choix de l'utilisateur
             switch (choix) {
                 case 0:
                     printf("Merci de votre visite !\n");
                     break;
                 case 1:
                     MiseAjourPoints(NameUser,SurnameUser,FonctionAddition());
+                    printf("\n");
                     break;
                 case 2:
                     MiseAjourPoints(NameUser,SurnameUser,FonctionSoustraction());
+                    printf("\n");
                     break;
                 case 3:
                     MiseAjourPoints(NameUser,SurnameUser,FonctionMultiplication());   
+                    printf("\n");
                     break;
                 case 4:
                     MiseAjourPoints(NameUser,SurnameUser,FonctionTableMultiplication());
+                    printf("\n");
                     break;
                 case 5:
                     MiseAjourPoints(NameUser,SurnameUser,FonctionDivision());
+                    printf("\n");
                     break;
                 case 6:
                     MiseAjourPoints(NameUser , SurnameUser,MiniProbleme());
+                    printf("\n");
                     break;
                 case 7:
                     MiseAjourPoints(NameUser , SurnameUser,QuizGenerale());
+                    printf("\n");
                     break;
                 case 8:
                     AfficherPointsJoueur(NameUser,SurnameUser);
+                    printf("\n");
                     break;
                 default:
-                    printf("Erreur de saisie, veuillez réessayer.\n");
+                    printf("Erreur de saisie, veuillez réessayer.\n"); //Cas par défault si il n'entre pas un nombre entre 0 et 8
                     break;
         }
     }
