@@ -5,7 +5,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-//---------------------------------------------------------------------------------//ok
+//---------------------------------------------------------------------------------//
 
 int FonctionAddition() {
     int pointUser = 0;
@@ -81,7 +81,7 @@ int FonctionAddition() {
         
 }
 
-//---------------------------------------------------------------------------------//ok
+//---------------------------------------------------------------------------------//
 
 int FonctionMultiplication() {
     int resultat, ReponseUser,nbEssais, pointUser = 0;
@@ -158,7 +158,7 @@ int FonctionMultiplication() {
     return pointUser;
 }
 
-//---------------------------------------------------------------------------------//ok
+//---------------------------------------------------------------------------------//
 
 int FonctionSoustraction() {
     int resultat, ReponseUser,nbEssais,pointUser = 0;
@@ -245,7 +245,7 @@ int FonctionSoustraction() {
     return pointUser;
 }
 
-//---------------------------------------------------------------------------------//ok
+//---------------------------------------------------------------------------------//
 
 int FonctionTableMultiplication(){
 
@@ -332,7 +332,7 @@ int FonctionTableMultiplication(){
        return pointUser; 
     }
 
-//---------------------------------------------------------------------------------//ok
+//---------------------------------------------------------------------------------//
 
 int FonctionDivision(){
 
@@ -427,7 +427,7 @@ int FonctionDivision(){
 
 }
 
-//---------------------------------------------------------------------------------//ok
+//---------------------------------------------------------------------------------//
 
 int MiniProbleme(){
 
@@ -590,11 +590,30 @@ return pointUser;
 //---------------------------------------------------------------------------------//
 
 int QuizGenerale() {
+
+
+    printf("Bienvenue dans le Quiz generale !\n");
+    printf("\n");
+
+    printf("Vous avez 1 SEUL essai pour trouver le réponse à la question .\n");
+    printf("Chaque bonne réponse , raportent 20 points.\n");
+    printf("Votre total de points obtenus sera affiché à la fin.\n");
+    printf("\n");
+    
+
+    printf("Si vous trouvez en 1 seul coup, vous aurez 10 points\n");
+    printf("Si vous trouvez en 2 coups, vous aurez 5 points\n");
+    printf("Si vous trouvez en 3 coups, vous aurez 1 point\n");
+    printf("\n");
+
+    printf("Bonne chance !\n");
+    printf("\n");
+
     int score = 0;
     int reponse;
     char ReponseQuestion[30];
 
-    printf("Votre score sera affiché a la fin , vous aurez 20 points par bonne réponse ! \n");
+    printf("\n");
 
     // Question 1
     printf("Question 1: Qui a écrit 'Les Misérables' ?\n");
@@ -602,82 +621,92 @@ int QuizGenerale() {
     printf("Votre réponse (1-4): ");
     scanf("%d", &reponse);
     strcpy(ReponseQuestion ,"Victor Hugo");
-    (reponse ==1) ? score+=20 : printf("La bonne réponse était : %s",ReponseQuestion);
+    (reponse ==1) ? score+=20 , printf("Bonne réponse ! "): printf("La bonne réponse était : %s",ReponseQuestion);
 
     // Question 2
+    printf("\n");
     printf("\nQuestion 2: Quelle est la capitale de l'Australie ?\n");
     printf("1. Sydney\n2. Melbourne\n3. Canberra\n4. Brisbane\n");
     printf("Votre réponse (1-4): ");
     scanf("%d", &reponse);
     strcpy(ReponseQuestion ,"Canberra");
-    (reponse ==3) ? score+=20 : printf("La bonne réponse était : %s",ReponseQuestion);
+    (reponse ==3) ? score+=20 , printf("Bonne réponse ! "): printf("La bonne réponse était : %s",ReponseQuestion);
 
     // Question 3
+    printf("\n");
     printf("\nQuestion 3: Qui a peint la Joconde ?\n");
     printf("1. Michel-Ange\n2. Léonard de Vinci\n3. Raphael\n4. Claude Monet\n");
     printf("Votre réponse (1-4): ");
     scanf("%d", &reponse);
     strcpy(ReponseQuestion ,"Léonard de Vinci");
-    (reponse ==2) ? score+=20 : printf("La bonne réponse était : %s",ReponseQuestion);
+    (reponse ==2) ? score+=20 , printf("Bonne réponse ! "): printf("La bonne réponse était : %s",ReponseQuestion);
 
     // Question 4
+    printf("\n");
     printf("\nQuestion 4: Quel est le plus grand océan du monde ?\n");
     printf("1. Atlantique\n2. Pacifique\n3. Indien\n4. Arctique\n");
     printf("Votre réponse (1-4): ");
     scanf("%d", &reponse);
     strcpy(ReponseQuestion ,"Pacifique");
-    (reponse ==2) ? score+=20 : printf("La bonne réponse était : %s",ReponseQuestion);
+    (reponse ==2) ? score+=20 , printf("Bonne réponse ! "): printf("La bonne réponse était : %s",ReponseQuestion);
 
     // Question 5
+    printf("\n");
     printf("\nQuestion 5: Quelle est la durée d'une année sur Mars ?\n");
     printf("1. 365 jours\n2. 550 jours\n3. 720 jours\n4. 687 jours\n");
     printf("Votre réponse (1-4): ");
     scanf("%d", &reponse);
     strcpy(ReponseQuestion ,"687 jours");
-    (reponse ==4) ? score+=20 : printf("La bonne réponse était : %s",ReponseQuestion);
+    (reponse ==4) ? score+=20 , printf("Bonne réponse ! "): printf("La bonne réponse était : %s",ReponseQuestion);
 
     // Question 6
+    printf("\n");
     printf("\nQuestion 6: Qui est le fondateur de la psychanalyse ?\n");
     printf("1. Carl Jung\n2. Sigmund Freud\n3. Alfred Adler\n4. William James\n");
     printf("Votre réponse (1-4): ");
     scanf("%d", &reponse);
     strcpy(ReponseQuestion ,"Sigmund Freud");
-    (reponse ==2) ? score+=20 : printf("La bonne réponse était : %s",ReponseQuestion);
+    (reponse ==2) ? score+=20 , printf("Bonne réponse ! "): printf("La bonne réponse était : %s",ReponseQuestion);
 
     // Question 7
+    printf("\n");
     printf("\nQuestion 7: Quel est l'élément chimique dont le symbole est 'Au' ?\n");
     printf("1. Argent\n2. Or\n3. Aluminium\n4. Uranium\n");
     printf("Votre réponse (1-4): ");
     scanf("%d", &reponse);
     strcpy(ReponseQuestion ,"L'or");
-    (reponse ==2) ? score+=20 : printf("La bonne réponse était : %s",ReponseQuestion);
+    (reponse ==2) ? score+=20 , printf("Bonne réponse ! "): printf("La bonne réponse était : %s",ReponseQuestion);
 
     // Question 8
+    printf("\n");
     printf("\nQuestion 8: Quel est le plus grand désert chaud du monde ?\n");
     printf("1. Sahara\n2. Désert de Gobi\n3. Kalahari\n4. Désert de Sonora\n");
     printf("Votre réponse (1-4): ");
     scanf("%d", &reponse);
     strcpy(ReponseQuestion ,"Sahara");
-    (reponse ==1) ? score+=20 : printf("La bonne réponse était : %s",ReponseQuestion);
+    (reponse ==1) ? score+=20 , printf("Bonne réponse ! "): printf("La bonne réponse était : %s",ReponseQuestion);
 
     // Question 9
+    printf("\n");
     printf("\nQuestion 9: Qui a inventé l'ampoule électrique ?\n");
     printf("1. Nikola Tesla\n2. Thomas Edison\n3. Alexander Graham Bell\n4. Michael Faraday\n");
     printf("Votre réponse (1-4): ");
     scanf("%d", &reponse);
     strcpy(ReponseQuestion ,"Thomas Edison");
-    (reponse ==2) ? score+=20 : printf("La bonne réponse était : %s",ReponseQuestion);
+    (reponse ==2) ? score+=20 , printf("Bonne réponse ! "): printf("La bonne réponse était : %s",ReponseQuestion);
 
     // Question 10
+    printf("\n");
     printf("\nQuestion 10: Quel est le plus long fleuve du monde ?\n");
     printf("1. Amazone\n2. Nil\n3. Yangzi\n4. Mississippi\n");
     printf("Votre réponse (1-4): ");
     scanf("%d", &reponse);
     strcpy(ReponseQuestion ,"Le Nil");
-    (reponse ==2) ? score+=20 : printf("La bonne réponse était : %s",ReponseQuestion);
-
+    (reponse ==2) ? score+=20 , printf("Bonne réponse ! "): printf("La bonne réponse était : %s",ReponseQuestion);
+   
     // Afficher le score
-    printf("\nVotre score final: %d/200\n", score);
+    printf("\n");
+    printf("\nNombre total de points gagnés: %d/200\n", score);
 
     return score;
 }
@@ -886,7 +915,7 @@ void MiseAjourPoints(char *NomUser, char *PnomUser, int PointsUser) {
     remove("FichierPoints.txt"); // Supprime l'ancien fichier
     rename("FichierTemp.txt", "FichierPoints.txt"); // Renomme le fichier temporaire et remplace l'ancien
     
-    printf("Les points ont été mis à jour avec succès !\n");
+    printf("Vos points ont été mis à jour avec succès !\n");
 }
     
 //---------------------------------------------------------------------------------//
